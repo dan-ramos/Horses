@@ -8,9 +8,12 @@ var speed = 200
 func _process(delta):
 	var collision = move_and_collide(angle*speed*delta)
 	if collision:
-		var funx = randf_range(-.5, .5)
+		var funx = randf_range(-.2, .5)
+		var funy = randf_range(-.2, .5)
+		var chance = randi_range(0, 1)
 		angle = angle.bounce(collision.get_normal())
-		angle.x += funx
-		angle.y -= funx
+		if chance==0:
+			angle.x += funx
+			angle.y += funy
 		print(angle)
 		$AudioStreamPlayer.play()

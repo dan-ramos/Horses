@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://byeeyx17ughhf"]
+[gd_scene load_steps=10 format=3 uid="uid://byeeyx17ughhf"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fe4ng"]
 [ext_resource type="Texture2D" uid="uid://bi0hdofmu4gvg" path="res://stable.png" id="2_6beqd"]
-[ext_resource type="Texture2D" uid="uid://b5agg2kase8f7" path="res://Jovial.png" id="3_mguuw"]
 [ext_resource type="Script" path="res://horse.gd" id="4_c2fdt"]
+[ext_resource type="Texture2D" uid="uid://e0xqdnov6gee" path="res://horses/orange.png" id="4_k4ojd"]
 [ext_resource type="AudioStream" uid="uid://di8g1k634hxml" path="res://bonk.wav" id="5_3ddty"]
+[ext_resource type="Script" path="res://sugar.gd" id="6_g777x"]
+[ext_resource type="Texture2D" uid="uid://cuweqqcchbvel" path="res://sugar.png" id="7_gt3fp"]
+[ext_resource type="AudioStream" uid="uid://b421g8tfra0mp" path="res://horse.wav" id="8_g2sfj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5s1eu"]
+radius = 204.278
+height = 568.761
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fe4ng")
@@ -28,6 +35,9 @@ polygon = PackedVector2Array(216, 312, 209, 249, 285, 234, 390, 276, 387, 344, 3
 [node name="Polygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PackedVector2Array(84, 82, 688, 82, 700, 1599, 265, 1596, 268, 1500, 164, 1462, 81, 1479, 79, 44, 37, 41, 34, 1650, 745, 1651, 737, 27, 80, 31)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PackedVector2Array(517, 881, 504, 787, 597, 773, 691, 787, 678, 882, 598, 928)
+
 [node name="Horse" type="CharacterBody2D" parent="."]
 position = Vector2(359, 895)
 scale = Vector2(0.652381, 0.640625)
@@ -37,8 +47,71 @@ script = ExtResource("4_c2fdt")
 polygon = PackedVector2Array(39.5, -64, -1.4, -64, -1.4, -62.9, -2.4, -61.9, -8.7, -61.9, -10.4, -58.5, -10.4, -54, -14.4, -51, -14.4, -45.9, -18.4, -41.9, -24.5, -41.9, -30.5, -33.9, -36.7, -33.9, -38.4, -30.5, -38.4, -25.9, -43.6, -25.9, -52.5, -11.9, -52.5, 57.6, -49.4, 62.5, -49.4, 64, -31.1, 64, -27.6, 59.9, -25.6, 59.9, -25.6, 33.9, -21.6, 31, -21.6, 22.3, -12.6, 18.3, -10.4, 17.9, -2.4, 26.9, -2.4, 31, 1.6, 33.9, 1.6, 43, 5.6, 45.9, 5.6, 54.7, 13.9, 64, 29.7, 64, 32.6, 59.9, 34.4, 59.9, 34.4, 37.2, 30.4, 33.2, 30.4, 9.9, 34.4, 7, 34.4, -6.2, 52.5, -27.2, 52.5, -56.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Horse"]
-texture = ExtResource("3_mguuw")
+texture = ExtResource("4_k4ojd")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Horse"]
 stream = ExtResource("5_3ddty")
 volume_db = -7.843
+
+[node name="SugPoints" type="Node" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SugPoints"]
+position = Vector2(172, 164)
+
+[node name="Marker2D2" type="Marker2D" parent="SugPoints"]
+position = Vector2(565, 238)
+
+[node name="Marker2D3" type="Marker2D" parent="SugPoints"]
+position = Vector2(200, 512)
+
+[node name="Marker2D4" type="Marker2D" parent="SugPoints"]
+position = Vector2(556, 638)
+
+[node name="Marker2D5" type="Marker2D" parent="SugPoints"]
+position = Vector2(175, 843)
+
+[node name="Marker2D6" type="Marker2D" parent="SugPoints"]
+position = Vector2(580, 1042)
+
+[node name="Marker2D7" type="Marker2D" parent="SugPoints"]
+position = Vector2(181, 1129)
+
+[node name="Marker2D8" type="Marker2D" parent="SugPoints"]
+position = Vector2(345, 741)
+
+[node name="Marker2D9" type="Marker2D" parent="SugPoints"]
+position = Vector2(373, 1005)
+
+[node name="Marker2D10" type="Marker2D" parent="SugPoints"]
+position = Vector2(613, 1444)
+
+[node name="Marker2D11" type="Marker2D" parent="SugPoints"]
+position = Vector2(492, 1236)
+
+[node name="Marker2D12" type="Marker2D" parent="SugPoints"]
+position = Vector2(213, 1315)
+
+[node name="Marker2D13" type="Marker2D" parent="SugPoints"]
+position = Vector2(394, 1479)
+
+[node name="Marker2D14" type="Marker2D" parent="SugPoints"]
+position = Vector2(412, 507)
+
+[node name="sugar" type="Area2D" parent="."]
+position = Vector2(492, 1245)
+scale = Vector2(0.217532, 0.226563)
+collision_layer = 0
+script = ExtResource("6_g777x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sugar"]
+position = Vector2(4.59702, -8.82759)
+rotation = 1.17894
+shape = SubResource("CapsuleShape2D_5s1eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="sugar"]
+texture = ExtResource("7_gt3fp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sugar"]
+stream = ExtResource("8_g2sfj")
+
+[connection signal="body_entered" from="sugar" to="sugar" method="_on_body_entered"]

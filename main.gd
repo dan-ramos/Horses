@@ -4,7 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var newhorse = load('res://' + HorseLoader.getHorse() + '.png')
+	var newhorse = load('res://horses/' + HorseLoader.getHorse() + '.png')
 	$Horse/Sprite2D.texture = newhorse
 
 

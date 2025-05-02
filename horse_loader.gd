@@ -1,6 +1,6 @@
 extends Node
 
-var myHorse = "Jovial"
+var myHorse = "orange"
 
 func setHorse(horse):
 	myHorse = horse

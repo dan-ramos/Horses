@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Horses"
-run/main_scene="res://main.tscn"
+run/main_scene="res://SelectScene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/image="res://splash.png"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
